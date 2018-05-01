@@ -43,6 +43,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtResHor = new System.Windows.Forms.TextBox();
             this.btnllenaDef = new System.Windows.Forms.Button();
+            this.lblSolucion = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCalcula
@@ -63,7 +65,7 @@
             this.txtClases.Multiline = true;
             this.txtClases.Name = "txtClases";
             this.txtClases.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtClases.Size = new System.Drawing.Size(417, 88);
+            this.txtClases.Size = new System.Drawing.Size(417, 120);
             this.txtClases.TabIndex = 1;
             this.txtClases.WordWrap = false;
             // 
@@ -202,6 +204,27 @@
             this.btnllenaDef.UseVisualStyleBackColor = false;
             this.btnllenaDef.Click += new System.EventHandler(this.btnllenaDef_Click);
             // 
+            // lblSolucion
+            // 
+            this.lblSolucion.AutoSize = true;
+            this.lblSolucion.BackColor = System.Drawing.Color.Transparent;
+            this.lblSolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolucion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSolucion.Location = new System.Drawing.Point(824, 409);
+            this.lblSolucion.Name = "lblSolucion";
+            this.lblSolucion.Size = new System.Drawing.Size(64, 25);
+            this.lblSolucion.TabIndex = 35;
+            this.lblSolucion.Text = "label5";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(593, 599);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 36;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
             // frmSalones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +232,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1152, 658);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.lblSolucion);
             this.Controls.Add(this.btnllenaDef);
             this.Controls.Add(this.txtResHor);
             this.Controls.Add(this.label6);
@@ -247,6 +272,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtResHor;
         private System.Windows.Forms.Button btnllenaDef;
+        private System.Windows.Forms.Label lblSolucion;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
 
