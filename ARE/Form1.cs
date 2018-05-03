@@ -21,10 +21,17 @@ namespace ARE
         String[] linea;
         char c;
         int indexN,indexAdj,index, n,resSalon ;
+        String res;
 
         public frmSalones()
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor,true);
+            this.UpdateStyles();
+            this.btnCalcula.BackColor = System.Drawing.Color.Transparent;
+           // btnCalcula.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            //btnCalcula.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            //btnCalcula.BackColor = Color.Transparent;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,7 +51,7 @@ namespace ARE
 
         private void frmSalones_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void rBMaestro_CheckedChanged(object sender, EventArgs e)
@@ -59,156 +66,169 @@ namespace ARE
 
         private void btnCalcula_Click(object sender, EventArgs e)
         {
-            n = Int16.Parse(txtnumClases.Text);
-
-            adyacencia= new Boolean[n,n];
-            for (int i=0; i<txtClases.Lines.Length; i++)
+            if (txtClases.Text=="" || txtMaxSalones.Text=="" || txtnumClases.Text=="" || txtResHor.Text=="" || txtResMaes.Text=="")
             {
-                linea=txtClases.Lines[i].Split('-'); //clique a array
-                    
-                c = Convert.ToChar(linea[0]);        //convierte a char el primer elemento del clique
-                indexN = char.ToUpper(c) - 65;       //convierte a indice el char
-
-                if (linea.Length == 2)
-                {
-                    for (int j = 1; j < linea.Length; j++)
-                    {
-                        c = Convert.ToChar(linea[j]);
-                        indexAdj = char.ToUpper(c) - 65;
-
-                        adyacencia[indexN, indexAdj] = true;
-                        adyacencia[indexAdj, indexN] = true;
-
-                    }
-                    
-                }
-                else
-                {
-                    conectaN(linea);//conecta todos con todos del clique
-                }
-                
-
+                MessageBox.Show("Falta ingresar datos", "Error", MessageBoxButtons.OK);
             }
+            else {
+                n = Int16.Parse(txtnumClases.Text);
 
-            //agrego restricciones de maestro
-            
-             for (int i = 0; i < txtResMaes.Lines.Length; i++)
-            {
-                linea = txtResMaes.Lines[i].Split('-'); //clique a array
-                c = Convert.ToChar(linea[0]);        //convierte a char el primer elemento del clique
-                indexN = char.ToUpper(c) - 65;       //convierte a indice el char
-
-                for (int j = 1; j < linea.Length; j++)
+                adyacencia = new Boolean[n, n];
+                for (int i = 0; i < txtClases.Lines.Length; i++)
                 {
+                    linea = txtClases.Lines[i].Split('-'); //clique a array
+
+                    c = Convert.ToChar(linea[0]);        //convierte a char el primer elemento del clique
+                    indexN = char.ToUpper(c) - 65;       //convierte a indice el char
+
                     if (linea.Length == 2)
                     {
-                        c = Convert.ToChar(linea[j]);
-                        indexAdj = char.ToUpper(c) - 65;
+                        for (int j = 1; j < linea.Length; j++)
+                        {
+                            c = Convert.ToChar(linea[j]);
+                            indexAdj = char.ToUpper(c) - 65;
 
-                        adyacencia[indexN, indexAdj] = true;
-                        adyacencia[indexAdj, indexN] = true;
+                            adyacencia[indexN, indexAdj] = true;
+                            adyacencia[indexAdj, indexN] = true;
+
+                        }
+
                     }
                     else
                     {
                         conectaN(linea);//conecta todos con todos del clique
                     }
 
+
                 }
 
-            }
+                //agrego restricciones de maestro
 
-            //inicio la matriz de salon con restriccion, y la lleno con n listas
-            resHorario = new List<int>[n];
-
-            for (int i=0;i<n;i++)
-            {
-                resHorario[i]=new List<int>();
-            }
-
-            for (int j = 0; j < txtResHor.Lines.Length; j++)
-            {
-                String lineaResHor = txtResHor.Lines[j];
-                Console.WriteLine(txtResHor.Lines[j]);
-                if (lineaResHor[1] == '<')
+                for (int i = 0; i < txtResMaes.Lines.Length; i++)
                 {
-                    c = Convert.ToChar(lineaResHor[0]);
-                    index = char.ToUpper(c) - 65;
+                    linea = txtResMaes.Lines[i].Split('-'); //clique a array
+                    c = Convert.ToChar(linea[0]);        //convierte a char el primer elemento del clique
+                    indexN = char.ToUpper(c) - 65;       //convierte a indice el char
 
-                    Console.WriteLine(index);
-                    for (int i = (int)Char.GetNumericValue(lineaResHor[3])-2 ; i > 0; i--)
+                    for (int j = 1; j < linea.Length; j++)
                     {
-                        resHorario[index].Add(i);
+                        if (linea.Length == 2)
+                        {
+                            c = Convert.ToChar(linea[j]);
+                            indexAdj = char.ToUpper(c) - 65;
+
+                            adyacencia[indexN, indexAdj] = true;
+                            adyacencia[indexAdj, indexN] = true;
+                        }
+                        else
+                        {
+                            conectaN(linea);//conecta todos con todos del clique
+                        }
+
+                    }
+
+                }
+
+                //inicio la matriz de salon con restriccion, y la lleno con n listas
+                resHorario = new List<int>[n];
+
+                for (int i = 0; i < n; i++)
+                {
+                    resHorario[i] = new List<int>();
+                }
+
+                for (int j = 0; j < txtResHor.Lines.Length; j++)
+                {
+                    String lineaResHor = txtResHor.Lines[j];
+                    Console.WriteLine(txtResHor.Lines[j]);
+                    if (lineaResHor[1] == '<')
+                    {
+                        c = Convert.ToChar(lineaResHor[0]);
+                        index = char.ToUpper(c) - 65;
+
+                        Console.WriteLine(index);
+                        for (int i = (int)Char.GetNumericValue(lineaResHor[3]) - 2; i > 0; i--)
+                        {
+                            resHorario[index].Add(i);
+                        }
+                    }
+                    //si es mayor no hay que llenar el arreglo con for
+                    else
+                    {
+
+                        c = Convert.ToChar(lineaResHor[0]);
+                        index = char.ToUpper(c) - 65;
+
+                        Console.WriteLine(index);
+                        for (int i = (int)Char.GetNumericValue(lineaResHor[3]) - 2; i >= 0; i--)
+                        {
+                            resHorario[index].Add(i);
+                        }
                     }
                 }
-                //si es mayor no hay que llenar el arreglo con for
-                else
+                //imprimo restricciones
+                for (int i = 0; i < resHorario.Length; i++)
                 {
-                    
-                    c = Convert.ToChar(lineaResHor[0]);
-                    index = char.ToUpper(c) - 65;
-
-                    Console.WriteLine(index);
-                    for (int i = (int)Char.GetNumericValue(lineaResHor[3]) - 2; i >= 0; i--)
+                    for (int j = 0; j < resHorario[i].Count; j++)
                     {
-                        resHorario[index].Add(i);
+                        Console.Write(string.Format("{0} ", resHorario[i][j]));
+                    }
+                    Console.Write(Environment.NewLine);
+                }
+
+
+                salones = new int[n];
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        if (adyacencia[i, j])
+                        {
+                            salones[i]++;
+                        }
                     }
                 }
-            }
-            //imprimo restricciones
-            for (int i = 0; i < resHorario.Length; i++)
-            {
-                for (int j = 0; j < resHorario[i].Count; j++)
+                Console.WriteLine("salones numero de conex");
+
+
+                horario = new List<List<int>>();
+                for (int i = 0; i < n; i++)
                 {
-                    Console.Write(string.Format("{0} ", resHorario[i][j]));
+                    Console.Write(salones[i]);
                 }
-                Console.Write(Environment.NewLine);
-            }
+                resSalon = Int16.Parse(txtMaxSalones.Text);
+                horario.Add(new List<int>());
+                //agrego las restricciones de horario a horario
 
 
-            salones = new int[n];
+                areBi();
 
-            for(int i = 0; i < n; i++)
-             {
-                for(int j=0; j<n; j++)
+                //imprime matriz
+                for (int i = 0; i < n; i++)
                 {
-                    if (adyacencia[i,j])
+                    for (int j = 0; j < n; j++)
                     {
-                        salones[i]++;
+                        Console.Write(string.Format("{0} ", adyacencia[i, j]));
                     }
+                    Console.Write(Environment.NewLine);
                 }
-            }
-            Console.WriteLine("salones numero de conex");
-            for(int i = 0; i < n; i++)
-            {
-                Console.Write(salones[i]);
-            }
-            resSalon= Int16.Parse(txtMaxSalones.Text);
-            horario.Add(new List<int>());
-            //agrego las restricciones de horario a horario
-            
 
-            areBi();
+                res = "";
 
-            //imprime matriz
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
+                for (int i = 0; i < horario.Count; i++)
                 {
-                    Console.Write(string.Format("{0} ", adyacencia[i, j]));
+                    for (int j = 0; j < horario[i].Count; j++)
+                    {
+                        Console.Write(string.Format("{0} ", (char)(horario[i][j] + 65)));
+                        res = res + " " + (char)(horario[i][j] + 65);
+                    }
+                    Console.Write(Environment.NewLine);
+                    res = res + "\r\n";
                 }
-                Console.Write(Environment.NewLine);
+                txtResultado.Text = res;
+
             }
-
-            for (int i = 0; i < horario.Count; i++)
-            {
-                for (int j = 0; j < horario[i].Count; j++)
-                {
-                    Console.Write(string.Format("{0} ", (char)(horario[i][j]+65)));
-                }
-                Console.Write(Environment.NewLine);
-            }
-
-
 
         }
 
@@ -225,6 +245,21 @@ namespace ARE
             txtMaxSalones.Text = "2";
             txtResHor.Text = "A>=3";*/
 
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtnumClases.Text = "";
+            txtClases.Text = "";
+            txtMaxSalones.Text = "";
+            txtResHor.Text = "";
+            txtResMaes.Text = "";
+            txtResultado.Text = "";
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
 

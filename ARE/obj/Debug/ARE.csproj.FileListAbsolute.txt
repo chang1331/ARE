@@ -11,3 +11,15 @@ C:\Users\Jorge\Documents\ITAM\IA\Tarea4\ARE\ARE\obj\Debug\ARE.pdb
 C:\Users\Jorge\Documents\ITAM\IA\Tarea4\ARE\ARE\bin\Debug\GMap.NET.WindowsForms.dll
 C:\Users\Jorge\Documents\ITAM\IA\Tarea4\ARE\ARE\bin\Debug\GMap.NET.Core.dll
 C:\Users\Jorge\Documents\ITAM\IA\Tarea4\ARE\ARE\obj\Debug\ARE.csproj.CopyComplete
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\bin\Debug\ARE.exe.config
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\bin\Debug\ARE.exe
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\bin\Debug\ARE.pdb
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\bin\Debug\GMap.NET.Core.dll
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.csprojResolveAssemblyReference.cache
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.frmSalones.resources
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.Properties.Resources.resources
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.csproj.GenerateResource.cache
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.csproj.CoreCompileInputs.cache
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.csproj.CopyComplete
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.exe
+C:\Users\°°bReN\OneDrive\Documentos\ITAM\IA\Tareas\ARE\ARE\obj\Debug\ARE.pdb

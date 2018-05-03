@@ -43,17 +43,33 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtResHor = new System.Windows.Forms.TextBox();
             this.btnllenaDef = new System.Windows.Forms.Button();
-            this.lblSolucion = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtResultado = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalcula
             // 
             this.btnCalcula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCalcula.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcula.Location = new System.Drawing.Point(318, 599);
+            this.btnCalcula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCalcula.BackgroundImage")));
+            this.btnCalcula.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCalcula.Location = new System.Drawing.Point(283, 641);
             this.btnCalcula.Name = "btnCalcula";
-            this.btnCalcula.Size = new System.Drawing.Size(191, 23);
+            this.btnCalcula.Size = new System.Drawing.Size(241, 58);
             this.btnCalcula.TabIndex = 0;
             this.btnCalcula.Text = "Calcular";
             this.btnCalcula.UseVisualStyleBackColor = false;
@@ -88,7 +104,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(101, 333);
+            this.label3.Location = new System.Drawing.Point(101, 378);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(423, 29);
             this.label3.TabIndex = 8;
@@ -97,7 +113,7 @@
             // txtMaxSalones
             // 
             this.txtMaxSalones.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxSalones.Location = new System.Drawing.Point(283, 384);
+            this.txtMaxSalones.Location = new System.Drawing.Point(283, 429);
             this.txtMaxSalones.Name = "txtMaxSalones";
             this.txtMaxSalones.Size = new System.Drawing.Size(52, 28);
             this.txtMaxSalones.TabIndex = 9;
@@ -108,7 +124,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(92, 387);
+            this.label4.Location = new System.Drawing.Point(92, 432);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 21);
             this.label4.TabIndex = 10;
@@ -162,7 +178,7 @@
             // 
             // txtResMaes
             // 
-            this.txtResMaes.Location = new System.Drawing.Point(689, 301);
+            this.txtResMaes.Location = new System.Drawing.Point(685, 309);
             this.txtResMaes.Multiline = true;
             this.txtResMaes.Name = "txtResMaes";
             this.txtResMaes.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -181,10 +197,11 @@
             this.label6.Size = new System.Drawing.Size(361, 29);
             this.label6.TabIndex = 32;
             this.label6.Text = "Agrega restricciones de maestro";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtResHor
             // 
-            this.txtResHor.Location = new System.Drawing.Point(689, 104);
+            this.txtResHor.Location = new System.Drawing.Point(684, 104);
             this.txtResHor.Multiline = true;
             this.txtResHor.Name = "txtResHor";
             this.txtResHor.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -196,34 +213,120 @@
             // 
             this.btnllenaDef.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnllenaDef.BackColor = System.Drawing.Color.Transparent;
-            this.btnllenaDef.Location = new System.Drawing.Point(488, 469);
+            this.btnllenaDef.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnllenaDef.BackgroundImage")));
+            this.btnllenaDef.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnllenaDef.Location = new System.Drawing.Point(868, 674);
             this.btnllenaDef.Name = "btnllenaDef";
-            this.btnllenaDef.Size = new System.Drawing.Size(191, 23);
+            this.btnllenaDef.Size = new System.Drawing.Size(144, 25);
             this.btnllenaDef.TabIndex = 34;
             this.btnllenaDef.Text = "LlenaDefault";
             this.btnllenaDef.UseVisualStyleBackColor = false;
             this.btnllenaDef.Click += new System.EventHandler(this.btnllenaDef_Click);
             // 
-            // lblSolucion
-            // 
-            this.lblSolucion.AutoSize = true;
-            this.lblSolucion.BackColor = System.Drawing.Color.Transparent;
-            this.lblSolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolucion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSolucion.Location = new System.Drawing.Point(824, 409);
-            this.lblSolucion.Name = "lblSolucion";
-            this.lblSolucion.Size = new System.Drawing.Size(64, 25);
-            this.lblSolucion.TabIndex = 35;
-            this.lblSolucion.Text = "label5";
-            // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(593, 599);
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(744, 674);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(106, 25);
             this.btnNuevo.TabIndex = 36;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(61, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(58, 153);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(58, 368);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 39);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(643, 44);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 39);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 40;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(643, 259);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 39);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 41;
+            this.pictureBox5.TabStop = false;
+            // 
+            // txtResultado
+            // 
+            this.txtResultado.Location = new System.Drawing.Point(689, 495);
+            this.txtResultado.Multiline = true;
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.ReadOnly = true;
+            this.txtResultado.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtResultado.Size = new System.Drawing.Size(276, 88);
+            this.txtResultado.TabIndex = 42;
+            this.txtResultado.WordWrap = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
+            this.pictureBox6.Location = new System.Drawing.Point(631, 447);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(37, 39);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 43;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(684, 457);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 29);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Resultado";
             // 
             // frmSalones
             // 
@@ -231,9 +334,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1152, 658);
+            this.ClientSize = new System.Drawing.Size(1152, 726);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.txtResultado);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.lblSolucion);
             this.Controls.Add(this.btnllenaDef);
             this.Controls.Add(this.txtResHor);
             this.Controls.Add(this.label6);
@@ -251,6 +361,12 @@
             this.Name = "frmSalones";
             this.Text = "ARE";
             this.Load += new System.EventHandler(this.frmSalones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,8 +388,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtResHor;
         private System.Windows.Forms.Button btnllenaDef;
-        private System.Windows.Forms.Label lblSolucion;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TextBox txtResultado;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label5;
     }
 }
 
